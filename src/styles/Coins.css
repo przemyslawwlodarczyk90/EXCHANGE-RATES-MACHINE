@@ -1,0 +1,146 @@
+/* Coins.css */
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 0;
+    color: #555;
+  }
+  
+  .coin-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .coin-row:hover {
+    background: #f0f8ff;
+    transform: scale(1.01);
+  }
+  
+  .img-symbol {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .img-symbol img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  
+  .img-symbol p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .coin-row p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .coin-row p:nth-child(3) {
+    font-weight: bold;
+    color: #27ae60; /* Zielony dla ceny */
+  }
+  
+  .coin-row p:nth-child(4) {
+    font-weight: bold;
+    color: #e74c3c; /* Czerwony dla zmiany % */
+  }
+  
+  .coin-row p a {
+    color: #2980b9;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .coin-row p a:hover {
+    color: #3498db;
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .hide-mobile {
+      display: block;
+    }
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #8e44ad;
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+  }
+  
+  /* Wiersz monety */
+.coin-row {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Domyślne podświetlenie najechania */
+.coin-row:hover {
+  background: rgba(142, 68, 173, 0.1);
+}
+
+/* Tryb ciemny - podświetlenie */
+.app.dark-mode .coin-row:hover {
+  background: #ffffff; /* Jasne podświetlenie */
+  color: #2c3e50; /* Ciemny tekst */
+}
+
+/* Specyficzne dla ciemnego trybu - zmiana kolorów tekstu */
+.app.dark-mode .coin-row:hover .coin-id,
+.app.dark-mode .coin-row:hover .coin-symbol,
+.app.dark-mode .coin-row:hover p,
+.app.dark-mode .coin-row:hover .positive,
+.app.dark-mode .coin-row:hover .negative {
+  color: #2c3e50; /* Ciemny kolor tekstu podczas najechania */
+}
+
+/* Dodatnie wartości */
+.positive {
+  color: #4caf50;
+}
+
+/* Ujemne wartości */
+.negative {
+  color: #f44336;
+}

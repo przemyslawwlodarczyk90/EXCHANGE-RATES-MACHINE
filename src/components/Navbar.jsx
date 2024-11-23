@@ -1,17 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { FaCoins } from 'react-icons/fa';
-import './Navbar.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css"; // Style specyficzne dla paska nawigacji
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkMode, darkMode }) => {
   return (
-    <Link to='/'>
-      <div className="navbar">
-        <FaCoins className='icon' />
-        <h1>Coin <span className='purple'>Search</span></h1>
-      </div>
-    </Link>
-  )
-}
+    <div className="navbar">
+      <Link to="/" className="navbar-logo">
+        <h1>
+          Coin <span className="purple">Search</span>
+        </h1>
+      </Link>
+      {/* Przycisk Dark Mode */}
+      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
